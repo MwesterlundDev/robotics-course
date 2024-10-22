@@ -1,16 +1,19 @@
-from launch import LaunchDescription
-from launch_ros.actions import Node
-from launch.actions import DeclareLaunchArgument
 import os
 from ament_index_python.packages import get_package_share_directory
-from launch_ros.parameter_descriptions import ParameterValue
+
+from launch.actions import DeclareLaunchArgument
+from launch import LaunchDescription
 from launch.substitutions import Command, LaunchConfiguration
 
+from launch_ros.parameter_descriptions import ParameterValue
+from launch_ros.actions import Node
 
 def generate_launch_description():
+  bumperbot_description_dir = get_package_share_directory("bumperbot_description")
+
   model_arg = DeclareLaunchArgument(
     name="model",
-    default_value=os.path.join(get_package_share_directory("bumperbot_description"), "urdf", "bumperbot_description.urdf.xacro"),
+    default_value=os.path.join(bumperbot_description_dir, "urdf", "bumperbot_description.urdf.xacro"),
     description="Absolute path to robot URDF file"
   )
 
@@ -32,7 +35,7 @@ def generate_launch_description():
     executable="rviz2",
     name="rviz2",
     output="screen",
-    arguments=["-d", os.path.join(get_package_share_directory("bumperbot_description"), "rviz", "display.rviz")]
+    arguments=["-d", os.path.join(bumperbot_description_dir, "rviz", "display.rviz")]
   )
 
   return LaunchDescription([
