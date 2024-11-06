@@ -88,7 +88,7 @@
     </collision>
   </link>
 
-  <joint name="wheel_leftt_joint" type="continuous">
+  <joint name="wheel_left_joint" type="continuous">
     <parent link="base_link" />
     <child link="wheel_left_link" />
     <axis xyz="0 1 0" />
