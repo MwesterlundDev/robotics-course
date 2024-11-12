@@ -10,5 +10,6 @@ run gazebo
 `ros2 launch bumperbot_description gazebo.launch.py`
 
 ## Run controller
+Namespace is bumperbot_[0_9]
 `. install/setup.bash`
-`ros2 launch bumperbot_controller controller.launch.py`
+`ros2 launch bumperbot_controller controller.launch.py namespace:=bumperbot_2`
