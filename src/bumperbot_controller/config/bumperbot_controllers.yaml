@@ -1,23 +1,264 @@
-controller_manager:
-  ros__parameters:
-    update_rate: 100 # Hz
-    use_sim_time: true
+bumperbot_0:
+  controller_manager:
+    ros__parameters:
+      update_rate: 100 # Hz
+      use_sim_time: true
 
-    joint_state_broadcaster:
-      type: joint_state_broadcaster/JointStateBroadcaster
+      joint_state_broadcaster:
+        type: joint_state_broadcaster/JointStateBroadcaster
 
-    simple_velocity_controller:
+      simple_velocity_controller:
+        type: velocity_controllers/JointGroupVelocityController
+
+      bumperbot_controller:
+        type: diff_drive_controller/DiffDriveController
+  
+  simple_velocity_controller:
+    ros__parameters:
+      use_local_topics: true  
       type: velocity_controllers/JointGroupVelocityController
+      joints:
+        - wheel_left_joint
+        - wheel_right_joint
 
-    bumperbot_controller:
-      type: diff_drive_controller/DiffDriveController
+bumperbot_1:
+  controller_manager:
+    ros__parameters:
+      update_rate: 100 # Hz
+      use_sim_time: true
+
+      joint_state_broadcaster:
+        type: joint_state_broadcaster/JointStateBroadcaster
+
+      simple_velocity_controller:
+        type: velocity_controllers/JointGroupVelocityController
+
+      bumperbot_controller:
+        type: diff_drive_controller/DiffDriveController
 
 
-simple_velocity_controller:
-  ros__parameters:
-    joints:
-      - wheel_left_joint
-      - wheel_right_joint
+  simple_velocity_controller:
+    ros__parameters:
+      use_local_topics: true  
+      type: velocity_controllers/JointGroupVelocityController
+      joints:
+        - wheel_left_joint
+        - wheel_right_joint
+
+bumperbot_2:
+  controller_manager:
+    ros__parameters:
+      update_rate: 100 # Hz
+      use_sim_time: true
+
+      joint_state_broadcaster:
+        type: joint_state_broadcaster/JointStateBroadcaster
+
+      simple_velocity_controller:
+        type: velocity_controllers/JointGroupVelocityController
+
+      bumperbot_controller:
+        type: diff_drive_controller/DiffDriveController
+
+
+  simple_velocity_controller:
+    ros__parameters:
+      use_local_topics: true  
+      type: velocity_controllers/JointGroupVelocityController
+      joints:
+        - wheel_left_joint
+        - wheel_right_joint
+
+bumperbot_3:
+  controller_manager:
+    ros__parameters:
+      update_rate: 100 # Hz
+      use_sim_time: true
+
+      joint_state_broadcaster:
+        type: joint_state_broadcaster/JointStateBroadcaster
+
+      simple_velocity_controller:
+        type: velocity_controllers/JointGroupVelocityController
+
+      bumperbot_controller:
+        type: diff_drive_controller/DiffDriveController
+
+
+  simple_velocity_controller:
+    ros__parameters:
+      use_local_topics: true  
+      type: velocity_controllers/JointGroupVelocityController
+      joints:
+        - wheel_left_joint
+        - wheel_right_joint
+
+bumperbot_4:
+  controller_manager:
+    ros__parameters:
+      update_rate: 100 # Hz
+      use_sim_time: true
+
+      joint_state_broadcaster:
+        type: joint_state_broadcaster/JointStateBroadcaster
+
+      simple_velocity_controller:
+        type: velocity_controllers/JointGroupVelocityController
+
+      bumperbot_controller:
+        type: diff_drive_controller/DiffDriveController
+
+
+  simple_velocity_controller:
+    ros__parameters:
+      use_local_topics: true  
+      type: velocity_controllers/JointGroupVelocityController
+      joints:
+        - wheel_left_joint
+        - wheel_right_joint
+
+bumperbot_5:
+  controller_manager:
+    ros__parameters:
+      update_rate: 100 # Hz
+      use_sim_time: true
+
+      joint_state_broadcaster:
+        type: joint_state_broadcaster/JointStateBroadcaster
+
+      simple_velocity_controller:
+        type: velocity_controllers/JointGroupVelocityController
+
+      bumperbot_controller:
+        type: diff_drive_controller/DiffDriveController
+
+
+  simple_velocity_controller:
+    ros__parameters:
+      use_local_topics: true  
+      type: velocity_controllers/JointGroupVelocityController
+      joints:
+        - wheel_left_joint
+        - wheel_right_joint
+
+bumperbot_6:
+  controller_manager:
+    ros__parameters:
+      update_rate: 100 # Hz
+      use_sim_time: true
+
+      joint_state_broadcaster:
+        type: joint_state_broadcaster/JointStateBroadcaster
+
+      simple_velocity_controller:
+        type: velocity_controllers/JointGroupVelocityController
+
+      bumperbot_controller:
+        type: diff_drive_controller/DiffDriveController
+
+
+  simple_velocity_controller:
+    ros__parameters:
+      use_local_topics: true  
+      type: velocity_controllers/JointGroupVelocityController
+      joints:
+        - wheel_left_joint
+        - wheel_right_joint
+
+bumperbot_7:
+  controller_manager:
+    ros__parameters:
+      update_rate: 100 # Hz
+      use_sim_time: true
+
+      joint_state_broadcaster:
+        type: joint_state_broadcaster/JointStateBroadcaster
+
+      simple_velocity_controller:
+        type: velocity_controllers/JointGroupVelocityController
+
+      bumperbot_controller:
+        type: diff_drive_controller/DiffDriveController
+
+
+  simple_velocity_controller:
+    ros__parameters:
+      use_local_topics: true  
+      type: velocity_controllers/JointGroupVelocityController
+      joints:
+        - wheel_left_joint
+        - wheel_right_joint
+
+bumperbot_8:
+  controller_manager:
+    ros__parameters:
+      update_rate: 100 # Hz
+      use_sim_time: true
+
+      joint_state_broadcaster:
+        type: joint_state_broadcaster/JointStateBroadcaster
+
+      simple_velocity_controller:
+        type: velocity_controllers/JointGroupVelocityController
+
+      bumperbot_controller:
+        type: diff_drive_controller/DiffDriveController
+
+
+  simple_velocity_controller:
+    ros__parameters:
+      use_local_topics: true  
+      type: velocity_controllers/JointGroupVelocityController
+      joints:
+        - wheel_left_joint
+        - wheel_right_joint
+bumperbot_1:
+  controller_manager:
+    ros__parameters:
+      update_rate: 100 # Hz
+      use_sim_time: true
+
+      joint_state_broadcaster:
+        type: joint_state_broadcaster/JointStateBroadcaster
+
+      simple_velocity_controller:
+        type: velocity_controllers/JointGroupVelocityController
+
+      bumperbot_controller:
+        type: diff_drive_controller/DiffDriveController
+
+
+  simple_velocity_controller:
+    ros__parameters:
+      use_local_topics: true  
+      type: velocity_controllers/JointGroupVelocityController
+      joints:
+        - wheel_left_joint
+        - wheel_right_joint
+
+bumperbot_9:
+  controller_manager:
+    ros__parameters:
+      update_rate: 100 # Hz
+      use_sim_time: true
+
+      joint_state_broadcaster:
+        type: joint_state_broadcaster/JointStateBroadcaster
+
+      simple_velocity_controller:
+        type: velocity_controllers/JointGroupVelocityController
+
+      bumperbot_controller:
+        type: diff_drive_controller/DiffDriveController
+
+
+  simple_velocity_controller:
+    ros__parameters:
+      use_local_topics: true  
+      type: velocity_controllers/JointGroupVelocityController
+      joints:
+        - wheel_left_joint
+        - wheel_right_joint
 
 bumperbot_controller:
   ros__parameters:
