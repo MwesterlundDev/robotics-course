@@ -15,6 +15,7 @@ from std_msgs.msg import Float64MultiArray
 from geometry_msgs.msg import TwistStamped, TransformStamped
 from sensor_msgs.msg import JointState
 from nav_msgs.msg import Odometry
+from bumperbot_msgs.msg import BumperbotStats
 
 import math
 import numpy as np
@@ -44,6 +45,7 @@ class SimpleController(Node):
     self.vel_sub_ = self.create_subscription(TwistStamped, "bumperbot_controller/cmd_vel", self.velocityCallback, 10)
     self.joint_sub_ = self.create_subscription(JointState, "joint_states", self.jointCallback, 10)
     self.odom_pub_ = self.create_publisher(Odometry, "bumperbot_controller/odom", 10)
+    self.bumperbot_stats_pub_ = self.create_publisher(BumperbotStats, "bumperbot_stats", 10)
 
     self.speed_conversion_ = np.array([
       [ self.wheel_radius_ / 2, self.wheel_radius_ / 2 ],
@@ -62,6 +64,15 @@ class SimpleController(Node):
     self.transform_stamped_ = TransformStamped()
     self.transform_stamped_.header.frame_id = "odom"
     self.transform_stamped_.child_frame_id = "base_footprint"
+
+    self.bumperbot_stats_msg_ = BumperbotStats()
+    self.bumperbot_stats_msg_.name = self.get_namespace()
+    self.bumperbot_stats_msg_.x = self.x_
+    self.bumperbot_stats_msg_.y = self.x_
+    self.bumperbot_stats_msg_.theta = self.x_
+    self.bumperbot_stats_msg_.linear = 0
+    self.bumperbot_stats_msg_.angular = 0
+
 
     self.get_logger().info("The conversion matrix is: %s " % self.speed_conversion_)
 
@@ -118,7 +129,14 @@ class SimpleController(Node):
     self.transform_stamped_.transform.rotation.w = q[3]
     self.transform_stamped_.header.stamp = self.get_clock().now().to_msg()
 
+    self.bumperbot_stats_msg_.x = self.x_
+    self.bumperbot_stats_msg_.y = self.y_
+    self.bumperbot_stats_msg_.theta = self.theta_
+    self.bumperbot_stats_msg_.linear = linear
+    self.bumperbot_stats_msg_.angular = angular
+
     self.odom_pub_.publish(self.odom_msg_)
+    self.bumperbot_stats_pub_.publish(self.bumperbot_stats_msg_)
     self.br_.sendTransform(self.transform_stamped_)
 
 def main():

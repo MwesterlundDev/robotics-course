@@ -14,6 +14,7 @@ rosidl_generate_interfaces(
   ${PROJECT_NAME}
   "srv/AddTwoInts.srv"
   "srv/GetTransform.srv"
+  "msg/BumperbotStats.msg"
   DEPENDENCIES geometry_msgs
 )
 
